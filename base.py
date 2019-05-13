@@ -14,3 +14,9 @@ class RLAlgorithm(ABC):
 	@abstractmethod
 	def trial(self): pass
 	# Conduct a trial of multiple epochs.
+
+	def args_k(self, *args): return [self.constants[item] for item in args]
+	# Return a list of constants from keys
+
+	def kwargs_k(self, *args): return {item: self.constants[item] for item in args}
+	# Return a dict of constants from keys
